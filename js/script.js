@@ -1,14 +1,12 @@
 const checkbox = document.getElementById('test');
-const textInput = document.getElementById('text');
-
-function toggleVisibility() {
-  if (checkbox.checked) {
-    textInput.style.display = 'block';
-  } else {
-    textInput.style.display = 'none';
-  }
-}
-
-checkbox.addEventListener('change', toggleVisibility);
-
-toggleVisibility();
+const textElement = document.getElementById('text');
+let previousTextValue = textElement.value;
+checkbox.addEventListener('change', function () {
+    if (this.checked) {
+        textElement.value = previousTextValue;
+    } else {
+        previousTextValue = textElement.value;
+        textElement.value = "";
+    }
+    textElement.readOnly = !this.checked;
+});
