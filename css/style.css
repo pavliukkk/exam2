@@ -1,0 +1,18 @@
+body{
+    height: 100vh;
+    display: flex;
+    max-width: 1300px;
+    align-items: center;
+    justify-content: center;
+}
+
+#test {
+    transform: scale(1.5);
+}
+
+#text {
+    text-align: center;
+    margin-left: 20px;
+    font-size: 16px;
+    padding: 8px;
+}
